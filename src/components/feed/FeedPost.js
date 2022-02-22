@@ -1,10 +1,9 @@
 import React from "react";
 import { useFeedPostStyles } from "../../styles";
 
-function FeedPost() {
+export const FeedPost = () => {
   useFeedPostStyles();
 
   return <div>FeedPost</div>;
-}
+};
 
-export default FeedPost;

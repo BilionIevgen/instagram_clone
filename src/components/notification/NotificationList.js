@@ -1,10 +1,9 @@
 import React from "react";
 import { useNotificationListStyles } from "../../styles";
 
-function NotificationList() {
+export function NotificationList() {
   useNotificationListStyles();
 
   return <div>NotificationList</div>;
 }
 
-export default NotificationList;
