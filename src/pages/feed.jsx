@@ -1,6 +1,7 @@
 import { Hidden } from "@material-ui/core";
 import React from "react";
 import { FeedPost } from "../components/feed/FeedPost";
+import { FeedSideSuggestions } from "../components/feed/FeedSideSuggestions";
 import { getDefaultPost } from "../data";
 import { useFeedPageStyles } from "../styles";
 
@@ -19,7 +20,7 @@ function FeedPage() {
       <Hidden smDown>
         <div className={classes.sidebarContainer}>
           <div className={classes.sidebarWrapper}>
-            <FeedSide
+            <FeedSideSuggestions />
           </div>
         </div>
       </Hidden>
