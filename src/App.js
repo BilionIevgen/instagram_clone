@@ -16,8 +16,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exect element={<FeedPage />} />
-        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/:username" element={<ProfilePage />} />
+        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/p/:postId" element={<PostPage />} />
         <Route path="/accounts/login" element={<LoginPage />} />
         <Route path="/accounts/edit" element={<EditProfilePage />} />

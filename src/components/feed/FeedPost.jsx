@@ -8,7 +8,7 @@ import {
   UnlikeIcon,
   LikeIcon,
   RemoveIcon,
-  SaveIcon,
+  SaveIcon
 } from "../../icons";
 import { Link } from "react-router-dom";
 import {
@@ -16,13 +16,13 @@ import {
   Button,
   Hidden,
   Divider,
-  TextField,
+  TextField
 } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 import FollowSuggestions from "../shared/FollowSuggestions";
 import OptionsDialog from "../shared/OptionsDialog";
 
-export function FeedPost({ post, index }) {
+function FeedPost({ post, index }) {
   const classes = useFeedPostStyles();
   const [showCaption, setCaption] = React.useState(false);
   const [showOptionsDialog, setOptionsDialog] = React.useState(false);
@@ -103,7 +103,7 @@ export function FeedPost({ post, index }) {
               View all {comments.length} comments
             </Typography>
           </Link>
-          {comments.map((comment) => (
+          {comments.map(comment => (
             <div key={comment.id}>
               <Link to={`/${comment.user.username}`}>
                 <Typography
@@ -186,15 +186,15 @@ function Comment() {
         value={content}
         placeholder="Add a comment..."
         multiline
-        rowsMax={2}
-        rows={1}
-        onChange={(event) => setContent(event.target.value)}
+        maxRows={2}
+        minRows={1}
+        onChange={event => setContent(event.target.value)}
         className={classes.textField}
         InputProps={{
           classes: {
             root: classes.root,
-            underline: classes.underline,
-          },
+            underline: classes.underline
+          }
         }}
       />
       <Button
@@ -207,3 +207,5 @@ function Comment() {
     </div>
   );
 }
+
+export default FeedPost;

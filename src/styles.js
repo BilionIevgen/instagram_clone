@@ -826,8 +826,8 @@ export const useLoadingScreenStyles = makeStyles({
 /* UserCard component: /components/shared/UserCard.js */
 export const useUserCardStyles = makeStyles({
   avatar: {
-    width: ({ avatarSize = 44 }) => avatarSize,
-    height: ({ avatarSize = 44 }) => avatarSize
+    width: ({ avatarSize  }) => avatarSize,
+    height: ({ avatarSize  }) => avatarSize
   },
   typography: {
     textOverflow: "ellipsis",

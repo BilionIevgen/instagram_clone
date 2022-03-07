@@ -8,6 +8,7 @@ function NotFoundPage() {
     <Layout
       marginTop={120}
       title="Page Not Found"
+      minimalNavbar
       children={
         <>
           <Typography paragraph align="center" variant="h5">

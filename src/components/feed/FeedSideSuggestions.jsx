@@ -6,7 +6,7 @@ import UserCard from "../shared/UserCard";
 import FollowButton from "../shared/FollowButton";
 import { LoadingIcon } from "../../icons";
 
-export function FeedSideSuggestions() {
+function FeedSideSuggestions() {
   const classes = useFeedSideSuggestionsStyles();
 
   let loading = false;
@@ -27,7 +27,7 @@ export function FeedSideSuggestions() {
         {loading ? (
           <LoadingIcon />
         ) : (
-          Array.from({ length: 5 }, () => getDefaultUser()).map((user) => (
+          Array.from({ length: 5 }, () => getDefaultUser()).map(user => (
             <div key={user.id} className={classes.card}>
               <UserCard user={user} />
               <FollowButton side />
@@ -38,3 +38,5 @@ export function FeedSideSuggestions() {
     </article>
   );
 }
+
+export default FeedSideSuggestions;
