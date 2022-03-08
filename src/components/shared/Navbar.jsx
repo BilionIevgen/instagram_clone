@@ -26,6 +26,7 @@ import { defaultCurrentUser, getDefaultUser } from "../../data";
 import { NotificationList } from "../notification/NotificationList";
 import { useNProgress } from "@tanem/react-nprogress";
 import { Link,useNavigate, useLocation } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
 
 function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
@@ -39,6 +40,7 @@ function Navbar({ minimalNavbar }) {
 
   return (
     <>
+    
       <Progress isAnimating={isLoadingPage} />
       <AppBar className={classes.appBar}>
         <section className={classes.section}>
@@ -71,7 +73,7 @@ function Logo() {
 
 function Search({ history }) {
   const classes = useNavbarStyles();
-  const [loading] = React.useState(false);
+  const [loading,setLoading] = React.useState(false);
   const [results, setResults] = React.useState([]);
   const [query, setQuery] = React.useState("");
 
@@ -94,7 +96,7 @@ function Search({ history }) {
         TransitionComponent={Fade}
         open={hasResults}
         title={
-          hasResults && (
+          (
             <Grid className={classes.resultContainer} container>
               {results.map(result => (
                 <Grid
@@ -165,10 +167,10 @@ function Links({ path }) {
   function handleHideList() {
     setList(false);
   }
-
+  
   return (
     <div className={classes.linksContainer}>
-      {showList && <NotificationList handleHideList={handleHideList} />}
+      {showList && <NotificationList handleHideList={handleHideList}/>}
       <div className={classes.linksWrapper}>
         <Hidden xsDown>
           <AddIcon />
@@ -207,29 +209,12 @@ function Links({ path }) {
 }
 
 function Progress({ isAnimating }) {
-  const classes = useNavbarStyles();
-  const { animationDuration, isFinished, progress } = useNProgress({
+  const { progress } = useNProgress({
     isAnimating
   });
-
   return (
-    <div
-      className={classes.progressContainer}
-      style={{
-        opacity: isFinished ? 0 : 1,
-        transition: `opacity ${animationDuration}ms linear`
-      }}
-    >
-      <div
-        className={classes.progressBar}
-        style={{
-          marginLeft: `${(-1 + progress) * 100}%`,
-          transition: `margin-left ${animationDuration}ms linear`
-        }}
-      >
-        <div className={classes.progressBackground} />
-      </div>
-    </div>
+    <LoadingBar color={'red'} progress={progress* 100}
+    />
   );
 }
 

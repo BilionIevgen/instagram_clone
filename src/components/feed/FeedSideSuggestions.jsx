@@ -3,7 +3,7 @@ import { useFeedSideSuggestionsStyles } from "../../styles";
 import { Paper, Typography } from "@material-ui/core";
 import { getDefaultUser } from "../../data";
 import UserCard from "../shared/UserCard";
-import FollowButton from "../shared/FollowButton";
+import { FollowButton } from "../shared/FollowButton";
 import { LoadingIcon } from "../../icons";
 
 function FeedSideSuggestions() {
@@ -27,7 +27,7 @@ function FeedSideSuggestions() {
         {loading ? (
           <LoadingIcon />
         ) : (
-          Array.from({ length: 5 }, () => getDefaultUser()).map(user => (
+          Array.from({ length: 5 }, () => getDefaultUser()).map((user) => (
             <div key={user.id} className={classes.card}>
               <UserCard user={user} />
               <FollowButton side />

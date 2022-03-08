@@ -2,7 +2,7 @@ import React from "react";
 import { useFollowButtonStyles } from "../../styles";
 import { Button } from "@material-ui/core";
 
-function FollowButton({ side }) {
+export const FollowButton = function FollowButton({ side }) {
   const classes = useFollowButtonStyles({ side });
   const [isFollowing, setFollowing] = React.useState(false);
 
@@ -32,4 +32,3 @@ function FollowButton({ side }) {
   return isFollowing ? followingButton : followButton;
 }
 
-export default FollowButton;

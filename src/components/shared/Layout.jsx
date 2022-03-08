@@ -3,7 +3,7 @@ import { useLayoutStyles } from "../../styles";
 import Navbar from "./Navbar";
 import SEO from "./Seo";
 
-function Layout({ children, title, marginTop = 60, minimalNavbar=false }) {
+export const Layout = function({ children, title, marginTop = 60, minimalNavbar=false }) {
   const classes = useLayoutStyles();
 
   return (
@@ -19,4 +19,3 @@ function Layout({ children, title, marginTop = 60, minimalNavbar=false }) {
   );
 }
 
-export default Layout;
