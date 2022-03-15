@@ -1,5 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigationType,
+} from "react-router-dom";
+import { PostModal } from "./components/post/PostModal";
 import {
   EditProfilePage,
   ExplorePage,
@@ -12,19 +18,36 @@ import {
 } from "./pages";
 
 function App() {
+  const navigationType = useNavigationType();
+  const location = useLocation();
+  const modal = location.state?.modal;
+  const prevLocation = useRef(location);
+  useEffect(() => {
+    if (navigationType !== "POP" && !modal) {
+      prevLocation.current = location;
+    }
+  }, [location, modal, navigationType]);
+
+  const isModalOpen = modal && prevLocation.current !== location;
+
   return (
-    <Router>
-      <Routes>
+    <>
+      <Routes location={isModalOpen ? prevLocation.current : location}>
         <Route path="/" exect element={<FeedPage />} />
-        <Route path="/:username" element={<ProfilePage />} />
+        <Route exect path="/:username" element={<ProfilePage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/p/:postId" element={<PostPage />} />
+        <Route exect path="/p/:postId" element={<PostPage />} />
         <Route path="/accounts/login" element={<LoginPage />} />
         <Route path="/accounts/edit" element={<EditProfilePage />} />
         <Route path="/accounts/emailsignup" element={<SignUpPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
+      {isModalOpen && (
+        <Routes>
+          <Route exect path="/p/:postId" element={<PostModal />} />
+        </Routes>
+      )}
+    </>
   );
 }
 

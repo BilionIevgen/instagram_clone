@@ -19,7 +19,7 @@ import {
   TextField
 } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
-import FollowSuggestions from "../shared/FollowSuggestions";
+import { FollowSuggestions } from "../shared/FollowSuggestions";
 import OptionsDialog from "../shared/OptionsDialog";
 
 function FeedPost({ post, index }) {

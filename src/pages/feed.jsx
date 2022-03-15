@@ -11,6 +11,7 @@ import { LoadingLargeIcon } from "../icons";
 import FeedPostSkeleton from "../components/feed/FeedPostSkeleton";
 const FeedPost = React.lazy(() => import("../components/feed/FeedPost"));
 
+// path="/"
 function FeedPage() {
   const classes = useFeedPageStyles();
   const [isEndOfFeed] = React.useState(false);

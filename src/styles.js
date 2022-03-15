@@ -1,6 +1,7 @@
 import { makeStyles, withStyles, Tooltip } from "@material-ui/core";
 import IconSheet from "./images/icon-sheet.png";
 import IconSheet2 from "./images/icon-sheet-2.png";
+import { grey, red } from "@material-ui/core/colors";
 
 /* Feed page: /pages/feed.js */
 export const useFeedPageStyles = makeStyles(theme => ({
@@ -1182,7 +1183,8 @@ export const usePostSkeletonStyles = makeStyles(theme => ({
     borderRadius: "50%",
     flexGrow: "0",
     height: "30px",
-    marginRight: "12px",
+    marginRight: 32,
+    paddingLeft: 32,
     width: "30px"
   },
   headerTextSkeleton: {
@@ -1326,6 +1328,14 @@ export const useProfilePageStyles = makeStyles(theme => {
         "& p": {
           fontSize: "0.9rem"
         }
+      }
+    },
+    followingTextTypography:{
+      [theme.breakpoints.up("sm")]: {
+        color: grey[900],
+      },
+      [theme.breakpoints.down("xs")]: {
+        color: grey[500],
       }
     },
     followingCount: {

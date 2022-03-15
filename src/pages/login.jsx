@@ -11,6 +11,8 @@ import SEO from "../components/shared/Seo";
 import { useLoginPageStyles } from "../styles";
 import FacebookIconBlue from "../images/facebook-icon-blue.svg";
 import FacebookIconWhite from "../images/facebook-icon-white.png";
+
+// path="/accounts/login"
 function LoginPage() {
   const classes = useLoginPageStyles();
 

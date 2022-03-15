@@ -11,6 +11,7 @@ import SEO from "../components/shared/Seo";
 import { useSignUpPageStyles } from "../styles";
 import { LoginWithFacebook } from "./login";
 
+// path="/accounts/emailsignup"
 function SignUpPage() {
   const classes = useSignUpPageStyles();
 
