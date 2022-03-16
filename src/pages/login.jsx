@@ -92,7 +92,7 @@ export function LoginWithFacebook({ color, iconColor, variant }) {
       fullWidth
       className={classes.button}
     >
-      <img src={icon} className={classes.facebookIcon} alt="facebook image" />
+      <img src={icon} className={classes.facebookIcon} alt="facebook" />
       Log In with Facebook
     </Button>
   );

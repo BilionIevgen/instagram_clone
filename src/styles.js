@@ -1,7 +1,7 @@
 import { makeStyles, withStyles, Tooltip } from "@material-ui/core";
 import IconSheet from "./images/icon-sheet.png";
 import IconSheet2 from "./images/icon-sheet-2.png";
-import { grey, red } from "@material-ui/core/colors";
+import { grey } from "@material-ui/core/colors";
 
 /* Feed page: /pages/feed.js */
 export const useFeedPageStyles = makeStyles(theme => ({
@@ -608,7 +608,7 @@ export const useFeedPostStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   expanded: {
-    display: "block"
+    display: "inline-block"
   },
   caption: {
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", Helvetica, Arial, sans-serif`,

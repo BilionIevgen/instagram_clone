@@ -23,6 +23,7 @@ export const PostModal = function () {
             display: "flex",
             alignItems: "center",
             maxWidth: 935,
+            width:'100%',
             top: "50%",
             left: "50%",
             right: "auto",

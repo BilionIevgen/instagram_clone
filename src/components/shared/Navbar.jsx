@@ -84,6 +84,10 @@ function Search({ history }) {
     setResults(Array.from({ length: 5 }, () => getDefaultUser()));
   }, [query]);
 
+  React.useEffect(() => {
+    setLoading(false);
+  }, []);
+
   function handleClearInput() {
     setQuery("");
   }

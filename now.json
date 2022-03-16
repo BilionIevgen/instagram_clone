@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "instagram",
-  "alias": "instagram-react12",
+  "alias": "instagram-react",
   "builds": [
     {
       "src": "package.json",
@@ -18,7 +18,6 @@
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
-    { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
